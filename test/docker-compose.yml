@@ -1,0 +1,13 @@
+services:
+  prometheus-process-exporter:
+    restart: always
+    image: whatwewant/prometheus-process-exporter:${SERVICE_PROMETHEUS_PROCESS_EXPORTER_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_PROMETHEUS_PROCESS_EXPORTER_PORT
+      USERNAME: ${SERVICE_PROMETHEUS_PROCESS_EXPORTER_USERNAME}
+      PASSWORD: ${SERVICE_PROMETHEUS_PROCESS_EXPORTER_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
