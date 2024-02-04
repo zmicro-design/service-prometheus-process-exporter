@@ -7,6 +7,7 @@ services:
     privileged: true
     volumes:
       - /proc:/host/proc:ro
+      - $SERVICE_DIR/conf/config.yml:/etc/process-exporter/config.yml
     mem_limit: 4096m
     cpus: 2
       
